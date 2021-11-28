@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
 import routeMain from "./routes";
+
+import PageTitle from "components/PageTitle";
+
+import NewsList from "components/NewsList";
+
+import getNews from "services/getNews";
 
 import "./styles.scss";
 
-const NewsListPage = () => <h1>NewsListPage</h1>;
+const NewsListPage = () => {
+  const [newsList, setNewsList] = useState([]);
+
+  useEffect(() => {
+    getNews().then((response) => {
+      setNewsList(response.data.articles);
+    });
+  }, []);
+
+  return (
+    <section className="newsListPage">
+      <PageTitle
+        title={
+          <h2>
+            Быть <br /> в курсе <span>событий</span>
+          </h2>
+        }
+      />
+      {newsList.length > 0 && <NewsList list={newsList} />}
+    </section>
+  );
+};
 
 export { routeMain };
 export default NewsListPage;

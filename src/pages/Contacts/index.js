@@ -6,7 +6,7 @@ import ArturImg from "assets/img/vai.jpg";
 import "./styles.scss";
 
 const Contacts = () => (
-  <div className="contactsPage">
+  <section className="contactsPage">
     <div className="info">
       <div className="phone">
         <a href="tel:+79991234576">+7 (999) 123 45 76</a>
@@ -23,7 +23,7 @@ const Contacts = () => (
     <div className="image">
       <img src={ArturImg} alt={ArturImg} />
     </div>
-  </div>
+  </section>
 );
 
 
