@@ -4,7 +4,15 @@ import "./styles.scss";
 const Footer = () => {
   return (
     <footer className="mainFooter">
-      <h1>Footer</h1>
+      <div>
+        Новостник
+        <div className="small">Single Page Application</div>
+      </div>
+      <div className="small">Дипломный проект</div>
+      <div>
+        <div className="small">Made by</div>
+        Артур Валеев
+      </div>
     </footer>
   );
 };
