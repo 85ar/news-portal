@@ -1,15 +1,20 @@
 import React from "react";
 
+import { NavLink } from "react-router-dom";
+import { routeMain as routeNewsDetail } from "pages/NewsDetail";
+
+import DateView from "components/DateView";
+
 import "./styles.scss";
 
 const NewsItem = (props) => (
-  <div className="newsItem">
+  <NavLink className="newsItem" to={routeNewsDetail(props.item._id)}>
     <div className="title">{props.item.title}</div>
     <div className="bottomWrapper">
       <p className="source">{props.item.clean_url}</p>
-      <p>{props.item.published_date}</p>
+      <DateView value={props.item.published_date} />
     </div>
-  </div>
+  </NavLink>
 );
 
 export default NewsItem;
